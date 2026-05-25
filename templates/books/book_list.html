@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Library Management System</title>
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Font -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+  
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="main-container">
+
+      <!-- PREMIUM NAVBAR -->
+
+<nav class="navbar-custom">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-book-open-reader"></i>
+
+        LibraryHub
+
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            <i class="fa-solid fa-house"></i>
+            Home
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-book"></i>
+            Books
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-layer-group"></i>
+            Categories
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-heart"></i>
+            Favorites
+        </a>
+
+        <a href="#">
+            <i class="fa-solid fa-user"></i>
+            Profile
+        </a>
+
+    </div>
+
+</nav>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero-section">
+
+            <h1>
+                Discover Your Next Favorite Book
+            </h1>
+
+            <p>
+                Browse thousands of books from different categories
+            </p>
+
+        </section>
+
+        <!-- SEARCH SECTION -->
+
+        <section class="search-container">
+
+            <form method="GET" class="search-form">
+
+                <input type="text" name="q" class="search-input" placeholder="Search books...">
+
+                <button type="submit" class="search-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Search
+
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- BOOKS SECTION -->
+
+        <section class="books-section">
+
+            <h2 class="section-title">
+
+                <i class="fa-solid fa-book"></i>
+
+                Available Books
+
+            </h2>
+
+            <div class="books-container">
+
+                <div class="books-grid">
+
+                    {% for book in books %}
+
+                    <div class="book-card">
+
+                        <img src="{{ book.image.url }}" alt="{{ book.title }}">
+
+                        <div class="book-content">
+
+                            <h4>
+
+                                {{ book.title }}
+
+                            </h4>
+
+                            <p>
+
+                                <i class="fa-solid fa-user"></i>
+
+                                {{ book.author }}
+
+                            </p>
+
+                            <p>
+
+                                <i class="fa-solid fa-layer-group"></i>
+
+                                {{ book.category }}
+
+                            </p>
+
+                            <div class="stock-badge">
+
+                                <i class="fa-solid fa-box"></i>
+
+                                Stock: {{ book.stock }}
+
+                            </div>
+
+                            <a href="{% url 'book_detail' book.id %}" class="details-btn">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                                View Details
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    {% empty %}
+
+
+                    <div class="empty-container">
+
+                        <i class="fa-solid fa-book-open empty-icon"></i>
+
+                        <h2>
+                            No Books Found
+                        </h2>
+
+                        <p>
+                            Try searching with another book title.
+                        </p>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+
+            <p>
+
+                <i class="fa-solid fa-book-open-reader"></i>
+
+                Library Management System © 2026
+
+            </p>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
