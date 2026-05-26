@@ -11,15 +11,13 @@ body{
   
 }
 
-/* MAIN CONTAINER */
+
 
 .main-container{
     width: 100%;
 }
 
-/* NAVBAR */
 
-/* PREMIUM NAVBAR */
 
 .navbar-custom{
     width: 100%;
@@ -42,7 +40,6 @@ body{
     backdrop-filter: blur(10px);
 }
 
-/* LOGO */
 
 .logo{
     color: white;
@@ -72,7 +69,6 @@ body{
     transform: rotate(-10deg) scale(1.1);
 }
 
-/* NAVIGATION LINKS */
 
 .nav-links{
     display: flex;
@@ -101,7 +97,7 @@ body{
     gap: 8px;
 }
 
-/* HOVER EFFECT */
+
 
 .nav-links a:hover{
     background: rgba(255,255,255,0.1);
@@ -111,13 +107,10 @@ body{
     transform: translateY(-3px);
 }
 
-/* ACTIVE BUTTON STYLE */
 
 .nav-links a:first-child{
     background: rgba(255,255,255,0.08);
 }
-
-/* MOBILE MENU */
 
 @media(max-width:768px){
 
@@ -168,7 +161,6 @@ body{
     color: #e2e8f0;
 }
 
-/* SEARCH SECTION */
 
 .search-container{
     max-width: 1000px;
@@ -225,7 +217,7 @@ body{
 .search-btn:hover{
     background: #1d4ed8;
 }
-/* SECTION TITLE */
+
 
 .section-title{
     text-align: center;
@@ -238,14 +230,13 @@ body{
     color: #111827;
 }
 
-/* BOOK SECTION */
 
 .books-container{
     width: 92%;
 
     margin: auto;
 }
-/* BOOK GRID */
+
 
 .books-grid{
     display: grid;
@@ -254,7 +245,6 @@ body{
 
     gap: 30px;
 }
-/* BOOK CARD */
 
 .book-card{
     background: white;
@@ -276,7 +266,7 @@ body{
     box-shadow: 0px 15px 40px rgba(0,0,0,0.15);
 }
 
-/* IMAGE */
+
 
 .book-card img{
     width: 100%;
@@ -285,7 +275,6 @@ body{
     object-fit: cover;
 }
 
-/* CONTENT */
 
 .book-content{
     padding: 25px;
@@ -314,8 +303,6 @@ body{
     margin-right: 8px;
 }
 
-/* STOCK BADGE */
-
 .stock-badge{
     display: inline-block;
 
@@ -333,7 +320,7 @@ body{
     margin-top: 10px;
 }
 
-/* BUTTON */
+
 
 .details-btn{
     display: block;
@@ -366,7 +353,7 @@ body{
     color: white;
 }
 
-/* EMPTY MESSAGE */
+
 
 .empty-message{
     text-align: center;
@@ -379,7 +366,6 @@ body{
     padding: 70px 0;
 }
 
-/* FOOTER */
 
 .footer{
     background: #111827;
@@ -395,7 +381,6 @@ body{
     font-size: 18px;
 }
 
-/* RESPONSIVE */
 
 @media(max-width:992px){
 
@@ -449,7 +434,7 @@ body{
         font-size: 34px;
     }
 }
-/* EMPTY SEARCH RESULT */
+
 
 .empty-container{
     width: 100%;
