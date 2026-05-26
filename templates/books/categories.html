@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Categories</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="empty-container">
+
+        <div class="empty-icon">📚</div>
+
+        <h2>Book Categories</h2>
+
+        <div class="category-buttons">
+
+            <a href="{% url 'drama' %}" class="category-btn">Drama</a>
+
+            <a href="{% url 'romance' %}" class="category-btn">Romance</a>
+
+
+            <a href="{% url 'history' %}" class="category-btn">History</a>
+
+            <a href="{% url 'self_help' %}" class="category-btn">Self-Help</a>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

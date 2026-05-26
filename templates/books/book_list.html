@@ -16,14 +16,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    
+
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-  
 
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 
@@ -31,50 +31,30 @@
 
     <div class="main-container">
 
-    
 
-<nav class="navbar-custom">
 
-    <div class="logo">
+        <nav class="navbar-custom">
 
-        <i class="fa-solid fa-book-open-reader"></i>
+            <div class="logo">
 
-        LibraryHub
+                <i class="fa-solid fa-book-open-reader"></i>
 
-    </div>
+                LibraryHub
 
-    <div class="nav-links">
+            </div>
 
-        <a href="/">
-            <i class="fa-solid fa-house"></i>
-            Home
-        </a>
+            <div class="nav-links">
+                <a href="{% url 'login' %}">Login</a>
 
-        <a href="#">
-            <i class="fa-solid fa-book"></i>
-            Books
-        </a>
+                <a href="{% url 'categories' %}">Categories</a>
 
-        <a href="#">
-            <i class="fa-solid fa-layer-group"></i>
-            Categories
-        </a>
+                <a href="{% url 'wishlist' %}">Favorites</a>
 
-        <a href="#">
-            <i class="fa-solid fa-heart"></i>
-            Favorites
-        </a>
 
-        <a href="#">
-            <i class="fa-solid fa-user"></i>
-            Profile
-        </a>
+            </div>
+        </nav>
 
-    </div>
 
-</nav>
-
-       
 
         <section class="hero-section">
 
@@ -107,7 +87,7 @@
 
         </section>
 
-        
+
 
         <section class="books-section">
 
@@ -197,8 +177,6 @@
             </div>
 
         </section>
-
-       
 
         <footer class="footer">
 
