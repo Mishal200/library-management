@@ -7,7 +7,8 @@
 body{
     font-family: 'Poppins', sans-serif;
     background: #f3f4f6;
-    color: #111827;
+    color: #112627;
+   
 }
 
 .main-container{
@@ -395,17 +396,6 @@ body{
     margin-top: 30px;
 }
 
-/* .borrow-btn,
-.wishlist-btn{
-    padding: 14px 24px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-} */
-
 .borrow-btn,
 .details-btn,
 .back-btn{
@@ -594,4 +584,41 @@ body{
 
 .login-form button:hover{
     background: #1d4ed8;
+}
+/* Logout Button */
+
+.logout-btn{
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logout-btn:hover{
+    background: #dc2626;
+    transform: translateY(-3px);
+}
+
+.user-name{
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-name i{
+    color: #facc15;
+}
+
+.nav-links form{
+    display: inline-block;
 }

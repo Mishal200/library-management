@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Book
 from django.db.models import Q
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='login')
 def book_list(request):
 
     query = request.GET.get('q')
@@ -22,7 +24,6 @@ def book_list(request):
         'books/book_list.html',
         {'books': books}
     )
-
 
 def book_detail(request, id):
 
