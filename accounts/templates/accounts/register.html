@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Registration</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#1e3c72,#2a5298);
+            padding:20px;
+        }
+
+        .container{
+            width:100%;
+            max-width:450px;
+        }
+
+        .register-card{
+            background:#fff;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .logo{
+            text-align:center;
+            font-size:50px;
+            margin-bottom:10px;
+        }
+
+        .title{
+            text-align:center;
+            font-size:28px;
+            font-weight:700;
+            color:#222;
+            margin-bottom:8px;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#777;
+            margin-bottom:30px;
+        }
+
+        form p{
+            margin-bottom:18px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:6px;
+            font-weight:600;
+            color:#333;
+        }
+
+        input{
+            width:100%;
+            padding:14px;
+            border:1px solid #dcdcdc;
+            border-radius:10px;
+            font-size:15px;
+            transition:.3s;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:#2a5298;
+            box-shadow:0 0 0 3px rgba(42,82,152,.15);
+        }
+
+        .helptext{
+            display:block;
+            font-size:12px;
+            color:#777;
+            margin-top:5px;
+        }
+
+        ul.errorlist{
+            list-style:none;
+            color:#dc3545;
+            font-size:13px;
+            margin-bottom:5px;
+        }
+
+        .btn{
+            width:100%;
+            padding:14px;
+            border:none;
+            border-radius:10px;
+            background:#2a5298;
+            color:white;
+            font-size:16px;
+            font-weight:600;
+            cursor:pointer;
+            transition:.3s;
+            margin-top:10px;
+        }
+
+        .btn:hover{
+            background:#1e3c72;
+            transform:translateY(-2px);
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:25px;
+            color:#666;
+        }
+
+        .footer a{
+            text-decoration:none;
+            color:#2a5298;
+            font-weight:600;
+        }
+
+        .footer a:hover{
+            text-decoration:underline;
+        }
+
+        @media(max-width:500px){
+            .register-card{
+                padding:25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="register-card">
+
+        <div class="logo">📚</div>
+
+        <h2 class="title">Library Registration</h2>
+
+        <p class="subtitle">
+            Create your account to access the library system
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="btn">
+                Create Account
+            </button>
+        </form>
+
+        <div class="footer">
+            Already have an account?
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

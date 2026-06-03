@@ -23,89 +23,80 @@
 
     <div class="main-container">
 
-        <!-- Navbar -->
-        <nav class="navbar-custom">
+<!-- Navbar -->
+<nav class="navbar-custom">
 
-            <div class="logo">
-                <i class="fa-solid fa-book-open-reader"></i>
-                LibraryHub
-            </div>
+    <div class="logo">
+        <i class="fa-solid fa-book-open-reader"></i>
+        LibraryHub
+    </div>
 
-            <div class="nav-links">
+    <div class="nav-links">
 
-                {% if user.is_authenticated %}
+        <a href="{% url 'categories' %}">
+            <i class="fa-solid fa-layer-group"></i>
+            Categories
+        </a>
 
-                <span class="user-name">
-                    <i class="fa-solid fa-user"></i>
-                    {{ user.username }}
-                </span>
+        <a href="{% url 'wishlist' %}">
+            <i class="fa-solid fa-heart"></i>
+            Favorites
+        </a>
 
-                <form method="post" action="{% url 'logout' %}" style="display:inline;">
-                    {% csrf_token %}
-                    <button type="submit" class="logout-btn">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        Logout
-                    </button>
-                </form>
+        {% if user.is_authenticated %}
 
-                {% else %}
+            <span class="user-name">
+                <i class="fa-solid fa-user"></i>
+                {{ user.username }}
+            </span>
 
-                <a href="{% url 'login' %}">
-                    <i class="fa-solid fa-right-to-bracket"></i>
-                    Login
-                </a>
-
-                {% endif %}
-
-                <a href="{% url 'categories' %}">
-                    <i class="fa-solid fa-layer-group"></i>
-                    Categories
-                </a>
-
-                <a href="{% url 'wishlist' %}">
-                    <i class="fa-solid fa-heart"></i>
-                    Favorites
-                </a>
-
-            </div>
-
-        </nav>
-
-        <!-- Hero Section -->
-        <section class="hero-section">
-
-            <h1>
-                Discover Your Next Favorite Book
-            </h1>
-
-            <p>
-                Browse thousands of books from different categories
-            </p>
-
-        </section>
-
-        <!-- Search -->
-        <section class="search-container">
-
-            <form method="GET" class="search-form">
-
-                <input type="text"
-                    name="q"
-                    class="search-input"
-                    placeholder="Search books..."
-                    value="{{ request.GET.q }}">
-
-                <button type="submit" class="search-btn">
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                    Search
-
+            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
                 </button>
-
             </form>
 
-        </section>
+        {% else %}
+
+            <a href="{% url 'login' %}" class="login-btn">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </a>
+
+            <a href="{% url 'register' %}" class="register-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</nav>
+
+
+
+
+<section class="hero-section">
+
+    <div class="hero-content">
+
+        <h1>Library Management System</h1>
+
+        <p>
+            Discover, Reserve and Manage Thousands of Books
+            from Different Categories.
+        </p>
+
+        <a href="#books" class="hero-btn">
+            Explore Library
+        </a>
+
+    </div>
+
+</section>
 
         <!-- Books Section -->
         <section class="books-section">
